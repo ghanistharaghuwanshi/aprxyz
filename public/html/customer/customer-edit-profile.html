@@ -1,0 +1,58 @@
+<customerheader></customerheader>
+<main>
+    <div class="container">
+        <div class="section">
+        	<div class="row">
+                <div class="col s6">
+                    <h4>Edit Profile</h4>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col s3"></div>
+            	<div class="col s6">
+                    <div class="row">
+                        <div ng-show="onSubmit" class="green lighten-1 updateUserDetails"><span>{{Message}}</span></div>
+                        <div ng-show="onErr" class="red lighten-1 updateUserDetails"><span>{{Message}}</span></div>
+                    </div>
+                    <div class="row border">
+                        <div class="col s12">
+                            <form name="userDetailForm" novalidate>
+                                <div class="row border-bottom profile-item">
+                                    <div class="col s6"><b>Name</b></div>
+                                    <div class="col s6">
+                                        <input class="transfer" name="name" type="text" placeholder="Enter Name.."  ng-model="userDetail.name" required>
+                                        <p ng-show="userDetailForm.name.$invalid && !userDetailForm.name.$pristine" class="help-block red-text">Please enter your name</p>
+                                    </div>
+                                </div>
+                                <div class="row border-bottom profile-item">
+                                    <div class="col s6"><b>Mobile</b></div>
+                                    <div class="col s6">
+                                        <input class="transfer" name="mobile" type="text" placeholder="Enter Mobile No.." ng-model="userDetail.mobile_number" maxlength="10" minlength="10" required>
+                                        <p ng-show="userDetailForm.mobile.$invalid && !userDetailForm.mobile.$pristine" class="help-block red-text">Please enter your mobile number</p>
+                                    </div>
+                                </div>
+                                <div class="row profile-item">
+                                    <div class="col s6"><b>Pin</b></div>
+                                    <div class="col s6">
+                                        <input class="transfer" name="pin" type="password" minlength="4" maxlength="8" placeholder="Enter Pin.." ng-model="userDetail.pin" required>
+                                        <p ng-show="userDetailForm.pin.$invalid && !userDetailForm.pin.$pristine" class="help-block red-text">please enter at least 4 digit pin number</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            	<div class="col s3"></div>
+            </div>
+            <div class="row">
+            	<div class="col s5"></div>
+            	<div class="col s2">
+            		<a href="javascript:void(0)" ng-disabled="userDetailForm.$invalid" ng-click="updateUserDetails()"><i class="large material-icons">play_arrow</i></a>
+            		<div><b>Save Changes</b></div>
+            	</div>
+            	<div class="col s5"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="page-footer grey darken-1" style="padding-top: 0"></footer>

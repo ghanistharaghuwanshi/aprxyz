@@ -1,0 +1,65 @@
+<customerheader></customerheader>
+<main>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s6">
+                    <h4>Add Balance</h4>
+                </div>
+            </div>
+            <div class="row">
+            	<div class="col s3">
+                <div class="row">
+                 <div ng-show="onSubmit" class="green lighten-1 updateUserDetails"><span>{{Message}}</span></div> 
+                 </div>  
+                </div>
+            	<div class="col s9">
+                    <form name="transferForm" novalidate>
+                		<div class="row">
+                			<div class="col s8">
+
+                				<div class="col s6" style="padding-top: 1em"><b>Enter Amount in Rs</b></div>
+    			            	<div class="col s6"><input type="text" name="amount" class="transfer" placeholder="Manual type" ng-model="balance.amount" required>
+                                <p ng-show="transferForm.amount.$invalid && !transferForm.amount.$pristine" class="help-block red-text">Please enter amount</p></div>
+    			            	<div class="col s6" style="padding-top: 1em"><b>Hours credited to Balance</b></div>
+    			            	<div class="col s6"><input type="text" name="hoursCredit" class="transfer" placeholder="Auto generate" ng-model="balance.hoursCredit" required>
+                                <p ng-show="transferForm.hoursCredit.$invalid && !transferForm.hoursCredit.$pristine" class="help-block red-text">Please enter hours</p>
+                                </div>
+                			</div>
+                			<div class="col s4">
+                				<div class="addbalance"><a href="javascript:void(0)" ng-disabled="transferForm.$invalid" ng-click="addBalance()"><i class="large material-icons">play_arrow</i></a></div>
+                                
+                        		<div class="addbalance"><b>Proceed to Payment Gateway</b></div>
+                			</div>
+                			
+                		</div>
+                    </form>   
+            	</div>
+            	
+                <!-- <div class="col s4">
+                    <div class="row profile-item balance addbalance">
+                        <b>Enter Amount in Rs</b>
+                    </div>
+                    <div class="row profile-item addbalance">
+                        <b>Hours credited to Balance</b>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="row profile-item balance">
+                        <input type="text" class="transfer" placeholder="Manual type">
+                    </div>
+                    <div class="row profile-item ">
+                        <input type="text" class="transfer" placeholder="Auto generate">
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="addbalance"><a href="javascript:void(0)"><i class="large material-icons">play_arrow</i></a></div>
+                    <div class="addbalance"><b>Proceed to Payment Gateway</b></div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <input type="text" style="display:none" data-ng-model="trip_id" id="trip_id">
+    </div>
+</main>
+<footer class="page-footer grey darken-1" style="padding-top: 0"></footer>

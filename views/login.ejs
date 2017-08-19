@@ -1,0 +1,168 @@
+<html>
+	<head>
+		<title>Login</title>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="<%= host %>css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+		<link href="<%= host %>css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> 
+		<link rel="stylesheet" href="<%= host %>css/materialize.min.css">
+		<link href="<%= host %>css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> 
+	</head>
+	<body>
+		<div class="main">
+			<nav class="white" role="navigation">
+				<a id="logo-container" class="brand-logo"><img class="responsive-img circle" src="<%= host %>/images/logo1.png" style="height: 65px; padding: 5px;" /></a>
+				<div class="nav-wrapper container">
+					<div class="row">
+						<div class="col s2"></div>
+						<div class="col s6">
+							<!-- <input type="search" name="search" class="search" placeholder="Search.."> -->
+						</div>
+						<div class="col s4">
+							<ul class="right hide-on-med-and-down">
+								<li>
+									<a href="javscript:void(0)" ng-click="showMenu()"><i class="large material-icons">settings</i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<form role="form" action="<%= host %>loginAuthentication" id="LoginForm" method="post">
+				<div class="container oauthpopup">
+					<div class="facebook_title">Login</div>
+					<div class="facebook_message">
+						<div class="row">
+							<div class="col s2">
+								<img src="<%=host%>images/user-permissions.png" style="width:90%; padding-top: 1.8em">
+							</div>
+							<div class="col s7">
+								<div> <%= message %></div>
+								<input type="hidden" name="RequestUrl" value="<%= RequestUrl %>">
+								<div class="form-group">
+									<label>Email</label>
+									<input type="email" name="email" id="email" placeholder="Enter Email..">
+								</div>
+								<div class="form-group">
+									<label>Password</label>
+									<input type="password" name="password" id="password" placeholder="Enter Password..">
+								</div>
+								<!-- <button type="submit" class="submitBtn">Login</button> -->
+								<input type="submit" value="Login" class="g_btn right-align" id="allow">&nbsp;
+							</div>
+							<div class="col s3">
+								<img src="<%=host%>images/logo1.png" style="width:90%; padding-top: 1.8em">
+							</div>
+						</div>
+					</div>
+					<div class="facebook_container">
+						<div>
+
+						</div>
+					</div>
+				</div>
+			</form>
+			<footer class="page-footer grey darken-1" style="padding-top: 0; position: fixed; width: 100%; bottom: 0px;">
+				<div class="footer-copyright">
+					<div class="container">
+					<!--  Made by <a class="orange-text text-lighten-3" href="#">Materialize</a> -->
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+
+	<script src="<%= host %>js/jquery-latest.js"></script>
+	<script src="<%= host %>js/angular.min.js"></script>
+	<script src="<%= host %>js/materialize.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+</html>
+<style type="text/css">
+	.container.oauthpopup
+	{
+		margin-top: 23px;
+		border: 5px solid #9c9c9c;
+	}
+	.facebook_window
+	{
+		background-color:white;
+		width: 445px;
+		min-height: 120px;
+		border: 1px solid #535156;
+		border-top: 0px;
+		border-radius:2px;
+		box-shadow : 0px 0px 0px 10px rgba(115,115,115,0.8);
+	}
+
+	.facebook_title
+	{
+		font: 14px Verdana;
+		color: #fff;
+		background-color: #707070;
+		font-weight: bold;
+		margin: -1px;
+		margin-bottom: 0;
+		padding: 5px 10px;
+	}
+
+	.facebook_message
+	{
+		min-height: 30px;
+		padding: 10px;
+		margin: 0px;
+		font: 0.9em Verdana, Arial, Helvetica, sans-serif;
+		background-color: #fff;
+		line-height: 2em;
+	}
+
+	.facebook_container
+	{
+		height: 42px;
+		line-height: 42px;
+		width: 100%;
+		margin: 0px;
+		margin-top: -1px;
+		padding: 0px;
+		background-color: #f2f2f2;
+		border-top: 1px solid #e6e6e6;
+		text-align: right;
+	}
+
+	.s_btn
+	{
+		background-color: rgba(153, 153, 153, 0.4);
+		color: #333;
+		padding-top: 1px;
+		padding-left: 4px;
+		padding-right: 4px;
+		padding-bottom: 2px;
+		cursor: pointer;
+		font-size: 13px;
+		font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+		border: none;
+		text-align: center;
+		padding: 5px 20px;
+		font-size: 14px;
+		border-radius: 4px;
+		text-transform: uppercase;
+	}
+
+
+	.g_btn
+	{
+		background-color: #22bf9a;
+		color: #ffffff;
+		padding-top: 1px;
+		padding-left: 4px;
+		padding-right: 4px;
+		padding-bottom: 2px;
+		cursor: pointer;
+		font-size: 13px;
+		font-family: 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif;
+		border: none;
+		text-align: center;
+		padding: 5px 20px;
+		font-size: 14px;
+		border-radius: 4px;
+		text-transform: uppercase;
+	}
+</style>

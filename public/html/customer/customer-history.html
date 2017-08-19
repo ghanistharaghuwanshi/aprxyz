@@ -1,0 +1,33 @@
+<customerheader></customerheader>
+<main>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s6">
+                    <h4>History</h4>
+                </div>
+            </div>
+            <table id="history-table" datatable="ng" dt-options="dtOptions" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Vendor</th>
+                        <th>Multiplier</th>
+                        <th>Time Clocked</th>
+                        <!-- <th>Total Time Clocked</th> -->
+                    </tr>
+                </thead>
+                <tbody class="table-border" >
+                    <tr ng-repeat="video in VideoHistory | orderBy:'-id'">
+                        <td>{{video.start_time | date:'dd MMM, yyyy'}}</td>
+                        <td>{{video.name}}</td>
+                        <td>{{video.cuurent_multiplier}}</td>
+                        <td>{{video.view_time}}</td>
+                        <!-- <td>{{video.view_time_with_multiplier}}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<footer class="page-footer grey darken-1" style="padding-top: 0"></footer>

@@ -1,0 +1,38 @@
+<nav class="white" role="navigation" style="height: 5em">
+  <a id="logo-container" href="#/customer-dashboard" class="brand-logo"><img class="responsive-img circle" src="./images/logo1.png" style="height: 65px; padding: 5px;" /></a>
+    <div class="nav-wrapper">
+        <div class="row">
+            <div class="col s2"></div>
+            <div class="col s2">
+                <!-- <input type="search" name="search" placeholder="Search.."> -->
+            </div>
+            <div class="col s8">
+                <ul class="right hide-on-med-and-down">
+                    <form ng-submit="login()">
+                      <li><div ng-hide="noError" class="ng-hide  red lighten-1 error-me loginErrorCustomer" style="padding: 0 !important"><span>{{ErrorMessage}}</span></div></li>
+                      <li style="width: 15em;"><input type="text" data-ng-model="username" class="validate black-text" placeholder="Mobile No..."></li>
+                      <li style="margin-left:10px;width: 15em;"><input type="password" data-ng-model="password" class="validate black-text" placeholder="Pin..."></li>
+                      <li><a href="javascript:void(0)" ng-click="login()"><i class="large material-icons" style="font-size: 4.2em;color: #000;">play_arrow</i></a></li>
+                      <input type="submit" style="display: none;">
+                    </form>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col m8"></div>
+        <div class="col m4 right-align">
+            <div class="row">
+                <div class="col s6">
+                    <a href="javascript:void(0)">Forgot Pin</a>
+                </div>
+                <div class="col s6">
+                    <a href="#/user-registration">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

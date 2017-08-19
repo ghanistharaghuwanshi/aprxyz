@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Store Admin</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"> 
+        <link href="dataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/materialize.clockpicker.css">
+    </head>
+    <body>
+    	<ng-view>
+    		
+    	</ng-view>
+		<script src="js/jquery-latest.js"></script>
+		<script src="js/apr-xyz.js"></script>
+		<script src="js/provoke.min.js"></script>
+		<script src="js/Revoke.js"></script>
+
+		<script src="js/materialize.js"></script>
+		<script src="js/init.js"></script>
+		
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="dataTable/js/jquery.dataTables.js"></script>
+		<script src="dataTable/js/angular-datatables.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+		<script src="js/materialize.clockpicker.js"></script>
+		<!-- Add Js Files -->
+		<script src="js/custom/app.js"></script>
+		<script src="js/custom/indexController.js"></script>
+		<script src="js/custom/completedTripController.js"></script>
+		<script src="js/custom/dashboardMainController.js"></script>
+		<script src="js/custom/idleVehicleController.js"></script>
+		<script src="js/custom/rechargeController.js"></script>
+		<script src="js/custom/userController.js"></script>
+		<script src="js/custom/vehiclesController.js"></script>
+		<script src="js/custom/addUserController.js"></script>
+		<script src="js/custom/vendorController.js"></script>
+		<script src="js/custom/addVendorController.js"></script>
+		<script src="js/custom/editOnGoingTripController.js"></script>
+		<script src="js/custom/addTripController.js"></script>
+		<script src="js/custom/addRechargeController.js"></script>
+		<script src="js/custom/editUserController.js"></script>
+		<script src="js/custom/editVendorController.js"></script>
+		<script src="js/custom/addVehicleController.js"></script>
+		<script src="js/custom/resetPasswordController.js"></script>
+        <script src="js/custom/newPasswordController.js"></script>
+        <script src="js/custom/cancelTripsController.js"></script>
+        <script src="js/custom/exchange.js"></script>
+        <script src="js/custom/apiController.js"></script>
+        <script src="js/custom/customer_basic_controller.js"></script>
+        <script src="js/custom/transfers.js"></script>
+        <script src="js/custom/sessions.js"></script>
+        <script src="js/custom/history.js"></script>
+        <script src="js/custom/profile.js"></script>
+		
+		<script>
+			angular.bootstrap(document,['vehiclesApp']);
+
+			//init the modal
+			$('.modal-trigger').leanModal();
+
+			function openModal(id, hrs) {
+			  //simulate ajax call to get the modal content
+			  var htmlFromServer = getHtml(id);
+
+			  //append the html to the modal
+			  $('#modal_content').html(htmlFromServer);
+			 
+			  $('#modal1').openModal();
+			};
+
+			function getHtml(id) {
+			  var input = $('#trip_id');
+			  input.val(id);
+			  input.trigger('input');
+			};
+		</script>
+ 	</body>
+</html>

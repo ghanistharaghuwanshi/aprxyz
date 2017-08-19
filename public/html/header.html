@@ -1,0 +1,27 @@
+<nav class="white" role="navigation">
+  <a id="logo-container" href="#/dashboard" class="brand-logo"><img class="responsive-img circle" src="./images/logo1.png" style="height: 65px; padding: 5px;" /></a>
+  <div class="nav-wrapper container">
+    <ul class="right hide-on-med-and-down" ng-controller="headerController">
+      <li ng-class="{active: $route.current.activetab == 'dashboard'}"><a href="#/dashboard">Sessions</a></li>
+      <li ng-class="{active: $route.current.activetab == 'users'}"><a href="#/user">Users</a></li>
+      <li ng-class="{active: $route.current.activetab == 'vendors'}"><a href="#/vendors">Vendors</a></li>
+      <li ng-class="{active: $route.current.activetab == 'recharges'}"><a href="#/recharges">Transaction</a></li>
+      <li ng-class="{active: $route.current.activetab == 'exchange'}"><a href="#/exchange-rate">Exchange Rate</a></li>
+      <li ng-class="{active: $route.current.activetab == 'exchange-req'}"><a href="#/exchange-requests">Exchange Requests</a></li>
+     <!--<li ng-class="{active: $route.current.activetab == 'vehicles'}"><a href="#/vehicles">Vehicles</a></li>-->
+      <li><a data-ng-click="logout()">Logout</a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="side-nav">
+      <li><a href="#/dashboard">Sessions</a></li>
+      <li><a href="#/user">Users</a></li>
+      <li><a href="#/vendors">Vendors</a></li>
+      <li><a href="#/recharges">Transaction</a></li>
+      <li><a href="#/exchange-rate">Exchange Rate</a></li>
+<!--      <li><a href="#/vehicles">VEHICLES</a></li>-->
+      <li><a data-ng-click="logout()">Logout</a></li>
+    </ul>
+    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">Menu</i></a>
+  </div>
+</nav>
+

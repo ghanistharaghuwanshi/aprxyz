@@ -1,0 +1,73 @@
+<header></header>
+  <main>
+    <div class="container">
+      <div class="section">
+          <div class="row">
+          <div class="col s3"></div>
+            <form class="col s6" ng-submit="addTrip()">
+              <input type="hidden" ng-model="data.id">
+              <div class="row">
+                <label>Select Owner</label>
+                <select class="browser-default" id="ownerRepeatSelect" ng-model="data.owner_id" ng-options="value.id as value.name for (key,value) in vendors">
+                  <option value="" disabled selected>Choose Owner</option>
+                </select>
+              </div>
+              <div class="row">
+               <label>Enter Vehicle</label>
+               <input type="text" ng-model="data.vehicle_id">
+                <!-- <select class="browser-default" ng-options="value.id as value.reg_number for (key,value) in vehicles" ng-model="data.vehicle_id">
+                  <option value="" disabled selected>Choose Vehicle</option>
+                </select> -->
+              </div>
+              <div class="row">
+               <label>Select Requester</label>
+                <select class="browser-default" ng-options="value.id as value.name for (key,value) in users " ng-model="data.requester_id">
+                  <option value="" disabled selected>Choose Requester</option>
+                </select>
+              </div>
+              <div class="row">
+               <div class="input-field col s6">
+                  <!-- <p><b>Start Date</b></p>
+                  <input id="date" type="date" ng-model="data.start_date" class="validate"> -->
+                  <label for="inputCreated">Start date</label>
+                  <input input-date
+                        ng-model="data.start_date"
+                        type="text"
+                        name="created"
+                        id="inputCreated"
+                        ng-model="currentTime"
+                        container=""
+                        format="yyyy-mm-dd"
+                        months-full="{{ month }}"
+                        months-short="{{ monthShort }}"
+                        weekdays-full="{{ weekdaysFull }}"
+                        weekdays-short="{{ weekdaysShort }}"
+                        weekdays-letter="{{ weekdaysLetter }}"
+                        disable="disable"
+                        today="today"
+                        first-day="1"
+                        clear="clear"
+                        close="close"
+                        select-years="15"
+                        />
+                </div>
+                <div class="input-field col s6">
+
+                    <!-- <p><b>Start Time</b></p>
+                    <input id="time" type="time" ng-model="data.start_time" class="validate"> -->
+                    <label for="input_starttime">Start Time</label>
+                    <input id="input_starttime" ng-model="data.start_time" input-clock data-twelvehour="false" type="text">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button type="submit" class="waves-effect waves-light btn green">Add</button>
+                  <a href="#/dashboard" class="waves-effect waves-light btn red lighten-2">Back to List</a> 
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer grey darken-1" style="padding-top: 0"></footer>

@@ -1,0 +1,41 @@
+<header></header>
+  <main>
+  <div class="container">
+    <div class="section">
+        <div class="row">
+        <div class="col s2"></div>
+          <form class="col s8" name="userForm" ng-submit="addVehicle()" enctype="multipart/form-data" novalidate>
+              <div class="row">
+                
+                  <label>Select Vendor</label>
+                <select class="browser-default" name="user" ng-options="value.id as value.name for (key,value) in vendors" ng-model="data.user_id" required>
+                  <option value="" disabled selected>Choose Vendor</option>
+                </select>
+                <p ng-show="rechargeForm.user.$invalid && !rechargeForm.user.$pristine" class="help-block red-text">Choose Vendor</p>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" id="reg_number" name="dob" ng-model="data.reg_number" required>
+                  <label for="reg_number">Reg. Number</label>
+                  <p ng-show="userForm.dob.$invalid && !userForm.dob.$pristine" class="help-block red-text">Please enter date of birth.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" name="description" ng-model="data.description" class="materialize-textarea"></textarea>
+                  <label for="textarea1">Textarea</label>
+                  <p ng-show="userForm.description.$invalid && !userForm.description.$pristine" class="help-block red-text">Please enter description</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button type="submit" ng-disabled="userForm.$invalid" class="waves-effect waves-light btn green">Add</button>
+                  <a href="#/vehicles" class="waves-effect waves-light btn red lighten-2">Back to List</a> 
+                </div>
+              </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  </main>
+  <footer class="page-footer grey darken-1" style="padding-top: 0"></footer>

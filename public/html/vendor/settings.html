@@ -1,0 +1,96 @@
+<vendorheader></vendorheader>
+  <main>
+    <div class="container setting-content">
+      <div class="section">
+            <div class="row">
+               <div class="col s4">
+                  <div class="vendor-logo">
+                    <img ng-src="uploads/{{vendor.lisence_file}}" style="width: 100%;max-height: 100%" ng-hide="ChangeImage">
+                    <form ng-show="ChangeImage" ng-submit="updateProfile()">
+                      <input type="hidden" name="vendor_id" ng-model="vendor.id">
+                      <div class="file-field input-field">
+                        <div class="btn">
+                          <span>File</span>
+                          <input type="file" accept="image/*" file-model="myFile">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input class="file-path validate" type="text">
+                        </div>
+                      </div>
+                      <button class="btn btn-success right">Save</button>
+                    </form>
+                  </div>
+                  <a class="right" style="cursor: pointer;" ng-hide="ChangeImage"  ng-click="ChangeImage=true">Edit</a>
+                   <a class="right" style="cursor: pointer;" ng-show="ChangeImage"  ng-click="ChangeImage=false">Cancel</a>
+                  <div class="vendor-name">
+                    <input type="text" placeholder="Enter Name" ng-model="vendor.name">
+                  </div>
+                  <button class="btn btn-success right" ng-click="updateName()">Update</button>
+                  <div class="vendor-name">
+                    <input type="text" placeholder="Enter Pin" ng-model="vendor.pin">
+                  </div>
+                  <button class="btn btn-success right" ng-click="updatePin()">Update</button>
+                </div>
+                <div class="col s8">
+                    <div id="card-alert" class="card red" ng-show="onError">
+                      <div class="card-content white-text">
+                        <p>Error : {{errorMsg}}</p>
+                      </div>
+                    </div>
+                    <div id="card-alert" class="card green" ng-show="onSuccess">
+                      <div class="card-content white-text">
+                        <p>Success : {{successMsg}}</p>
+                      </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s6 left-align"><b>Hours Earned</b></div>
+                        <div class="col s6  right-align"><b>{{vendor.balance}} </b></div>
+                        <div class="col s12  right-align">
+                          <a href="javscript:void(0)" ng-click="RequestForExchange()">Request for Exchange </a>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-container">
+                        <div class="first-section">
+                             <div class="row" >
+                                <div class="col s6 left-align"><b>Vendor Id</b></div>
+                                 <div class="col s6  right-align"><span>{{vendor.id}}    </span><!-- <b style="text-decoration:underline; cursor:pointer">Edit</b> --></div>
+                                 
+                             </div>
+                            
+                        </div>
+                        <div class="first-section">
+                            <div class="row" >
+                                <div class="col s6 left-align"><b>Multiplier</b></div>
+                                <div class="col s6  right-align">
+                                <input type="number" ng-model='vendor.multiplier' class="multiplierHidden" style="display: none;" />
+                                <span class="multiplierShown">{{vendor.multiplier}}   </span><br><b style=" text-decoration:underline; cursor:pointer" class="multiEdit" ng-click="editMultiplier()">Edit</b><button class="btn btn-success multiSubmit" style="display: none;" ng-click="updateMultiplier()">Save</button>
+                                </div>
+                             </div>
+                            
+                        </div>
+                       
+                        <div class="first-section">
+                          <div class="row" >
+                              <div class="col s2 left-align"><b>URL</b></div>
+                              <div class="col s10  right-align">
+                              <input type="text" ng-model='vendor.url' class="urlHidden" style="display: none;" />
+                              <span class="urlShown">{{vendor.url}}   </span><br><b class="urlEdit" style="text-decoration:underline; cursor:pointer" ng-click="editUrl()">Edit</b><button class="btn btn-success urlSubmit"  ng-click="updateUrl()" style="display: none;">Save</button></div>
+                             </div>
+                            
+                        </div>
+                        
+                        </div>
+                        <div class="row" style="margin-bottom: 0;">
+                            <div class="col s6 left-align"><b>Exchange Rate</b></div>
+                            <div class="col s6  right-align"><b>{{exchangeRate}}</b></div>
+                        </div>
+                    </div>
+                <div class="col s2"></div>
+            </div>
+           
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer grey darken-1" style="padding-top: 0"></footer>
+

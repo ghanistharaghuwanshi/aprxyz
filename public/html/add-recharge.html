@@ -1,0 +1,49 @@
+<header></header>
+  <main>
+    <div class="container">
+      <div class="section">
+          <div class="row">
+          <div class="col s3"></div>
+            <form class="col s6" name="rechargeForm" ng-submit="addRecharge()" novalidate>
+              <div class="row">
+                <label>Select User</label>
+                <select class="browser-default" name="user" ng-options="value.id as value.name for (key,value) in users" ng-model="data.user_id" required>
+                  <option value="" disabled selected>Choose User</option>
+                </select>
+                <p ng-show="rechargeForm.user.$invalid && !rechargeForm.user.$pristine" class="help-block red-text">Choose user to recharge for</p>
+              </div>
+              <div class="row">
+                <label>Select Chennel</label>
+                <select class="browser-default" name="chennel" ng-model="data.chennel" required>
+                  <option value="" disabled selected>Choose Channel</option>
+                  <option value="1">Online</option>
+                  <option value="0">Offline</option>
+                </select>
+                <p ng-show="rechargeForm.chennel.$invalid && !rechargeForm.chennel.$pristine" class="help-block red-text">Choose rechagre chennel</p>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="value" name="balanceValue" type="number" ng-model="data.balanceValue" class="validate" required>
+                  <label for="value">Balance Value</label>
+                  <p ng-show="rechargeForm.balanceValue.$invalid && !rechargeForm.balanceValue.$pristine" class="help-block red-text">Please enter recharge value</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="balance" type="number" name="blanceRecieved" ng-model="data.blanceRecieved" class="validate" required>
+                  <label for="balance">Balance Recieved</label>
+                  <p ng-show="rechargeForm.blanceRecieved.$invalid && !rechargeForm.blanceRecieved.$pristine" class="help-block red-text">Please enter balance recieved</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button type="submit" ng-disabled="rechargeForm.$invalid" class="waves-effect waves-light btn green">Recharge</button>
+                  <a href="#/recharges" class="waves-effect waves-light btn red lighten-2">Back to List</a> 
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer grey darken-1" style="padding-top: 0"></footer>

@@ -1,0 +1,48 @@
+<div class="container" style="margin-top: 12%">
+  <div class="row">
+    <div class="col m3"></div>
+    <div class="col m6  grey darken-1" >
+      <div class="row">
+        <div class="col m2"></div>
+        <div class="col m8">
+          <h5 class="indigo-text text-lighten-5 center-align">Login</h5>
+          <div class="nav-wrapper container  center-align"><a id="logo-container" href="javascript:void(0)" class="brand-logo"><img class="responsive-img" src="./images/logo1.png" /></a>
+        </div>
+        <div class="col m2"></div>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col m1"></div>
+        <div class="col m10">
+          <div>
+            <div ng-hide="noError" class="ng-hide  red lighten-1 error-me">
+            {{ErrorMessage}}</div>
+          </div>
+        </div>
+       <div class="col m1"></div>
+      </div>
+      <form data-ng-submit="login()">
+        <div class="row">
+          <div class="input-field col m12">
+            <input id="user_name" type="text" data-ng-model="username" class="validate">
+            <label for="user_name" class="white-text">Username</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col m12">
+            <input id="password" type="password" data-ng-model="password"  class="validate">
+            <label for="password"  class="white-text">Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s4">
+            <button type="submit" class="waves-effect waves-light btn grey lighten-1">Login</button> 
+          </div>
+          <div class="col s8 right-align">
+            <a href="#/resetPassword" class="white-text" >Forget Password ?</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

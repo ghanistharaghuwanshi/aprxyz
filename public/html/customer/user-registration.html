@@ -1,0 +1,45 @@
+<nav class="white" role="navigation" style="height: 5em">
+    <a id="logo-container" href="#/customer-dashboard" class="brand-logo"><img class="responsive-img circle" src="./images/logo1.png" style="height: 65px; padding: 5px;" /></a>
+    <div class="nav-wrapper">
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <h4>Register</h4>
+                <div class="row">
+                    <div class="col s4"></div>
+                    <div class="col s4">
+                        <div ng-show="onSubmit" style="margin-bottom: 1em" class="green lighten-1 updateUserDetails"><span>{{Message}}</span></div>
+                        <div ng-show="onErr" style="margin-bottom: 1em" class="red lighten-1 updateUserDetails"><span>{{Message}}</span></div>
+                        <form name="transferForm">
+                            <input type="text" name="firstname" class="transfer" placeholder="Enter Your First Name" ng-model="user.firstname" required>
+                            <p ng-show="transferForm.firstname.$invalid && !transferForm.firstname.$pristine" class="help-block red-text">Please enter first name</p>
+                            <input type="text" name="lastname" class="transfer" placeholder="Enter Your Last Name" ng-model="user.lastname" required>
+                            <p ng-show="transferForm.lastname.$invalid && !transferForm.lastname.$pristine" class="help-block red-text">Please enter last name</p>
+                            <input type="text" name="mobile" class="transfer" placeholder="Enter Your Mobile No" ng-model="user.mobile_number" required>
+                            <p ng-show="transferForm.mobile.$invalid && !transferForm.mobile.$pristine" class="help-block red-text">Please enter mobile number</p>
+                            <input type="password" name="pin" class="transfer" placeholder="Enter Your Pin" ng-model="user.pin" required>
+                            <p ng-show="transferForm.pin.$invalid && !transferForm.pin.$pristine" class="help-block red-text">Please select a pin</p>
+                            <input type="password" compare-to="user.pin" name="repin" class="transfer" placeholder="Re Enter Your Pin" ng-model="user.repin" required>
+                            <p ng-show="transferForm.repin.$invalid && !transferForm.repin.$pristine" class="help-block red-text">Please enter same pin</p>
+                        </form>
+                    </div>
+                    <div class="col s4">
+                        <div class="addbalance" style="margin-top: 40%;"><a href="javascript:void(0)" ng-disabled="transferForm.$invalid || !acceptTerms" ng-click="RegisterUser()"><i class="large material-icons">play_arrow</i></a></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4"></div>
+                    <div class="col s6">
+                        <input type="checkbox" ng-model="acceptTerms" id="myCheckbox" class="filled-in" />
+                        <label for="myCheckbox"> I accept <a style="color: #000">    Terms & Conditions </a></label>
+                        <p ng-show="TermsNotAccepted" class="help-block red-text">Please accept terms & conditions</p>
+                    </div>
+                    <div class="col s2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

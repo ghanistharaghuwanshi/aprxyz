@@ -1,0 +1,101 @@
+<header></header>
+  <main>
+    <div class="container">
+      <div class="section">
+          <div class="row">
+          <div class="col s2"></div>
+            <form class="col s8" name="userForm" ng-submit="editUser()" enctype="multipart/form-data" novalidate>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="first_name" type="text" name="first_name" ng-model="user.name" required class="validate">
+                  <label for="first_name">Full Name</label>
+                  <p ng-show="userForm.first_name.$invalid && !userForm.first_name.$pristine" class="help-block red-text">Please enter full name</p>
+                </div>
+                <div class="input-field col s6">
+                  <input id="mobile" type="text" name="mobile" ng-model="user.mobile_number" class="validate" required>
+                  <label for="mobile">Mobile</label>
+                  <p ng-show="userForm.mobile.$invalid && !userForm.mobile.$pristine" class="help-block red-text">Please enter valid mobile number</p>
+                </div>
+              </div>
+             <!-- <div class="row">
+                <div class="file-field input-field col s6">
+                  <div class="btn grey">
+                    <span>License File</span>
+                    <input type="file" name="license" accept="image/*" file-model="myFile"/>
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+                <div class="input-field col s6">
+                  <input id="license_number" type="text" name="license_number" ng-model="user.license_number" class="validate" required>
+                  <label for="license_number">License Number</label>
+                  <p ng-show="userForm.license_number.$invalid && !userForm.license_number.$pristine" class="help-block red-text">Please enter License Number.</p>
+                </div>
+              </div>-->
+              <div class="row">
+                <div class="input-field col s6">
+                  <label for="inputCreated">Date of Birth</label>
+                  <input input-date
+                        ng-model="user.dob"
+                        type="text"
+                        name="dob"
+                        id="inputCreated"
+                        ng-model="currentTime"
+                        container=""
+                        format="yyyy-mm-dd"
+                        months-full="{{ month }}"
+                        months-short="{{ monthShort }}"
+                        weekdays-full="{{ weekdaysFull }}"
+                        weekdays-short="{{ weekdaysShort }}"
+                        weekdays-letter="{{ weekdaysLetter }}"
+                        disable="disable"
+                        today="today"
+                        first-day="1"
+                        clear="clear"
+                        close="close"
+                        select-years="15"
+                        required/>
+                  <p ng-show="userForm.dob.$invalid && !userForm.dob.$pristine" class="help-block red-text">Please enter date of birth.</p>
+                </div>
+               <!-- <div class="input-field col s6">
+                  <input id="diNumber" type="text" name="diNumber" ng-model="user.di_number" class="validate" required>
+                  <label for="diNumber">DI Number</label>
+                  <p ng-show="userForm.diNumber.$invalid && !userForm.diNumber.$pristine" class="help-block red-text">Please enter DI Number.</p>
+                </div>-->
+               <div class="row">
+               <div class="input-field col s6">
+               <input id="pin" name="pin" ng-model="user.pin" type="text" class="validate" required>
+               <label for="pin">Pin Number</label>
+               <p ng-show="userForm.pin.$invalid && !userForm.pin.$pristine" class="help-block red-text">Please enter pin number.</p>
+              </div>
+              </div>
+              </div>
+              <!--<div class="row">
+               <div class="input-field col s6">
+                  <input id="pin" name="pin" ng-model="user.pin" type="text" class="validate" required>
+                  <label for="pin">Pin Number</label>
+                  <p ng-show="userForm.pin.$invalid && !userForm.pin.$pristine" class="help-block red-text">Please enter pin number.</p>
+                </div>
+              </div>-->
+              <div class="row">
+                <div class="input-field col s6">
+                  <p><b>Verified user</b></p>
+                    <input name="verified" type="radio" ng-model="user.status" id="yes"  value="Y" />
+                    <label for="yes">Yes</label>
+                    <input name="group1" value="N" ng-model="user.status" type="radio" id="no" />
+                    <label for="no">No</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button type="submit" ng-disabled="userForm.$invalid" class="waves-effect waves-light btn green">Update</button>
+                  <a href="#/user" class="waves-effect waves-light btn red lighten-2">Back to List</a> 
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer grey darken-1" style="padding-top: 0"></footer>
